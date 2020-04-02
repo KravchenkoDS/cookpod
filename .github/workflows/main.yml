@@ -1,9 +1,5 @@
 name: Elixir CI
 
-env:
-  MIX_ENV: test
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 on: push
 
 jobs:
@@ -55,7 +51,6 @@ jobs:
           mix local.rebar --force
           mix local.hex --force
           mix deps.get
-          mix coveralls.github
           mix compile
       - name: Run linter
         run: mix credo
