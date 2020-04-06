@@ -1,0 +1,52 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: en\n"
+"Plural-Forms: nplurals=2\n"
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/index.html.eex:2
+msgid "Welcome to %{name}!"
+msgstr ""
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/terms.html.slim:1
+msgid "All products are 100% digital and delivered electronically to your email."
+msgstr ""
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/terms.html.slim:1
+msgid "Application of Terms"
+msgstr ""
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/terms.html.slim:1
+msgid "Below are our Terms of Service, which outline a lot of legal goodies, but the bottom line is it’s our aim to always take care of both you, as a customer, or as a seller on our platform. We’ve included many of these terms to legally protect ourselves, but if you have an issue, always feel free to email us at themes@getbootstrap.com and we’ll do our best to resolve it in a fair and timely fashion."
+msgstr ""
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/terms.html.slim:1
+msgid "Bootstrap Themes is not responsible for you not receiving your theme if you fail to provide a valid email or for technical issues outside our control."
+msgstr ""
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/terms.html.slim:1
+msgid "By visiting and/or taking any action on Bootstrap Themes, you confirm that you are in agreement with and bound by the terms outlined below. These terms apply to the website, emails, or any other communication."
+msgstr ""
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/terms.html.slim:1
+msgid "Terms of Service"
+msgstr ""
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/terms.html.slim:1
+msgid "Themes"
+msgstr ""
