@@ -5,8 +5,6 @@ defmodule CookpodWeb.SessionController do
   def show(conn, _params) do
     current_user = get_session(conn, :current_user)
     render(conn, "show.html", current_user: current_user)
-    # text(conn, conn.assigns[:from_any_plug])
-    json(conn, %{status: :ok})
   end
 
   def new(conn, _params) do

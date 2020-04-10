@@ -1,6 +1,8 @@
 defmodule CookpodWeb.Router do
   use CookpodWeb, :router
   use Plug.ErrorHandler
+  import Plug.BasicAuth
+
 
 
   pipeline :browser do
@@ -9,11 +11,11 @@ defmodule CookpodWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
-    plug BasicAuth, username: "user", password: "secret"
+    plug :basic_auth, username: "admin", password: "secret"
   end
 
   pipeline :protected do
-    plug CookpodWeb.AuthPlug
+    plug :basic_auth, username: "admin", password: "secret"
   end  
 
   pipeline :api do
@@ -42,6 +44,16 @@ defmodule CookpodWeb.Router do
     |> put_view(CookpodWeb.ErrorView)
     |> render("404.html")
   end
+
+  def handle_errors(conn, %{kind: :error, reason: %Phoenix.ActionClauseError{}}) do
+    conn
+    |> fetch_session()
+    |> fetch_flash()
+    |> put_layout({CookpodWeb.LayoutView, :app})
+    |> put_view(CookpodWeb.ErrorView)
+    |> render("422.html")
+  end
+
 
   def handle_errors(conn, _) do
     conn
