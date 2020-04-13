@@ -17,6 +17,8 @@ html lang="en"
               p = "Hello, #{get_current_user(@conn)}"              
             - else
               a href=Routes.session_path(@conn, :new) Log in
+              <br />
+              a href=Routes.user_path(@conn, :new) Register
               p = "Hello, anonimus"
                           
   container

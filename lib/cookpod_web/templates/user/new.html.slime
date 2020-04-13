@@ -1,14 +1,14 @@
 .mt-4
-  = form_for @changeset, Routes.session_path(@conn, :create), fn form ->
+  = form_for @changeset, Routes.user_path(@conn, :create), fn form ->
     .form-group.row
       = label(form, :email, "Email", class: "col-sm-1 col-form-label")
       .col-sm-4
-        = text_input(form, :email, class: "form-control", placeholder: "Email")
+        = text_input(form, :email, class: form_control(form, :email), placeholder: "john")
         = error_tag(form, :email)
     .form-group.row
       = label(form, :password, "Password", class: "col-sm-1 col-form-label")
       .col-sm-4
-        = text_input(form, :password, class: "form-control", placeholder: "password", type: "password")
+        = text_input(form, :password, class: form_control(form, :email), placeholder: "secret", type: "password")
         = error_tag(form, :password)
     .form-group
       = submit("Submit", class: "btn btn-primary")

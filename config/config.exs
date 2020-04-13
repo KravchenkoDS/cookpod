@@ -33,6 +33,15 @@ config :phoenix, :template_engines,
 
 config :cookpod, CookpodWeb.Gettext, default_locale: "ru", locales: ~w(en ru)  
 
+
+# Congfiguration for Email Checker
+config :email_checker,
+  default_dns: :system,
+  also_dns: [],
+  validations: [EmailChecker.Check.Format, EmailChecker.Check.MX],
+  smtp_retries: 2,
+  timeout_milliseconds: :infinity
+  
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
