@@ -1,0 +1,29 @@
+doctype html
+html lang="en"
+  head
+    meta charset="utf-8"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    meta content="width=device-width, initial-scale=1" name="viewport"
+    title Cookpod · Phoenix Framework
+    link rel="stylesheet" href="#{Routes.static_path(@conn, "/css/app.css")}"
+
+  body
+    section.section
+      .navbar
+        .navbar-end
+          .navbar-item
+            = if user_logged_in?(@conn) do
+              = link("Log out", to: "/sessions", method: :delete, class: "button is-primary")              
+              p = "Hello, #{get_current_user(@conn)}"              
+            - else
+              a href=Routes.session_path(@conn, :new) Log in
+              p = "Hello, anonimus"
+                          
+  container
+
+    main.container role="main"
+      p.alert.alert-info role="alert"= get_flash(@conn, :info)
+      p.alert.alert-danger role="alert"= get_flash(@conn, :error)
+      = render @view_module, @view_template, assigns
+
+    script type="text/javascript" src="#{Routes.static_path(@conn, "/js/app.js")}"
