@@ -48,6 +48,7 @@ defmodule Cookpod.MixProject do
       {:phoenix_slime, "~> 0.13.1"},
       {:credo, "~> 1.2", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.12", only: :test},
+      {:argon2_elixir, "~> 2.3"},      
       {:email_checker, "~> 0.1.2"}
     ]
   end
