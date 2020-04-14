@@ -22,7 +22,7 @@ defmodule Cookpod.MixProject do
   def application do
     [
       mod: {Cookpod.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :email_checker]
     ]
   end
 
@@ -47,7 +47,10 @@ defmodule Cookpod.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:phoenix_slime, "~> 0.13.1"},
       {:credo, "~> 1.2", only: [:dev, :test], runtime: false},
-      {:excoveralls, "~> 0.12", only: :test}
+      {:excoveralls, "~> 0.12", only: :test},
+      {:argon2_elixir, "~> 2.3"},      
+      {:email_checker, "~> 0.1.2"},
+      {:password_validator, "~> 0.3"}
     ]
   end
 

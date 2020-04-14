@@ -11,7 +11,7 @@ defmodule CookpodWeb.ViewHelpers do
       nil ->
         "anonymous"
       current_user ->
-        current_user
+        current_user.email
     end
   end
   

@@ -9,3 +9,12 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+
+Cookpod.Repo.delete_all Cookpod.User
+
+Cookpod.User.changeset(%Cookpod.User{}, %{email: "markus@gmail.com", password: "password"})
+|> Cookpod.Repo.insert!
+
+Cookpod.User.changeset(%Cookpod.User{}, %{email: "guest@example.org", password: "password"})
+|> Cookpod.Repo.insert!
