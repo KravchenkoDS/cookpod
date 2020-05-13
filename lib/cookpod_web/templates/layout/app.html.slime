@@ -14,7 +14,8 @@ html lang="en"
           .navbar-item
             = if user_logged_in?(@conn) do
               = link("Log out", to: "/sessions", method: :delete, class: "button is-primary")              
-              p = "Hello, #{get_current_user(@conn)}"              
+              p = "Hello, #{get_current_user(@conn)}"    
+              a href=Routes.recipe_path(@conn, :index) Recipes          
             - else
               a href=Routes.session_path(@conn, :new) Log in
               <br />
