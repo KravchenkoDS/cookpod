@@ -50,7 +50,14 @@ defmodule Cookpod.MixProject do
       {:excoveralls, "~> 0.12", only: :test},
       {:argon2_elixir, "~> 2.3"},      
       {:email_checker, "~> 0.1.2"},
-      {:password_validator, "~> 0.3"}
+      {:password_validator, "~> 0.3"},
+      {:ex_aws, "~> 2.0"},
+      {:ex_aws_s3, "~> 2.0"},
+      {:hackney, "~> 1.6"},
+      {:poison, "~> 3.1"},
+      {:sweet_xml, "~> 0.6"},
+      {:arc, "~> 0.11.0"},
+      {:arc_ecto, "~> 0.11.3"},    
     ]
   end
 
