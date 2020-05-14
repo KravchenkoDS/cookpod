@@ -43,6 +43,13 @@ config :email_checker,
 
   config :arc,
   storage: Arc.Storage.Local
+
+config :cookpod, :phoenix_swagger,
+  swagger_files: %{
+    "priv/static/swagger.json" => [router: CookpodWeb.Router,endpoint: CookpodWeb.Endpoint]
+  }
+
+config :phoenix_swagger, json_library: Jason
   
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
