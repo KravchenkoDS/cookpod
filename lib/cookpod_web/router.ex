@@ -38,6 +38,25 @@ defmodule CookpodWeb.Router do
     get "/terms", PageController, :terms
   end  
 
+  scope "/api", CookpodWeb.Api, as: :api do
+    pipe_through :api
+    resources "/recipes", RecipeController, only: [:index, :show]
+  end
+
+  scope "/api/swagger" do
+    forward "/", PhoenixSwagger.Plug.SwaggerUI, otp_app: :cookpod, swagger_file: "swagger.json"
+  end
+
+  def swagger_info do
+    %{
+      info: %{
+        version: "1.0",
+        title: "Cookpod"
+      },
+      basePath: "/api"
+    }
+  end 
+
   def handle_errors(conn, %{kind: :error, reason: %Phoenix.Router.NoRouteError{}}) do
     conn
     |> fetch_session()
@@ -60,9 +79,4 @@ defmodule CookpodWeb.Router do
   def handle_errors(conn, _) do
     conn
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", CookpodWeb do
-  #   pipe_through :api
-  # end
 end
