@@ -19,6 +19,7 @@ defmodule Cookpod.DataCase do
   using do
     quote do
       alias Cookpod.Repo
+      import Cookpod.Factory
 
       import Ecto
       import Ecto.Changeset
