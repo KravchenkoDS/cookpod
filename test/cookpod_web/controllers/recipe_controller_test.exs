@@ -1,5 +1,5 @@
 defmodule CookpodWeb.RecipeControllerTest do
-  use CookpodWeb.ConnCase
+  use CookpodWeb.AuthUserCase
 
   alias Cookpod.Recipes
 
