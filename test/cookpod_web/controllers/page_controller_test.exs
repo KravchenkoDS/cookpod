@@ -1,15 +1,11 @@
 defmodule CookpodWeb.PageControllerTest do
-  use CookpodWeb.ConnCase
+  use CookpodWeb.AuthUserCase
   
-  def with_valid_authorization_header(conn) do
-    conn
-    |> put_req_header("authorization", "Basic dXNlcjpzZWNyZXQ=")
-  end
+  @moduletag basic_auth: true
 
   test "GET /", %{conn: conn} do
-    conn = conn
-    |> with_valid_authorization_header()
-    |> get("/") 
-    assert html_response(conn, 200) =~ "Добро пожаловать Phoenix!"
+    conn = get(conn, Routes.page_path(conn, :index))
+
+    assert html_response(conn, 200) =~ "Phoenix"
   end
 end
