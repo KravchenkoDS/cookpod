@@ -1,0 +1,18 @@
+h1 Show Product
+
+ul
+  li
+    strong Name:&nbsp;
+    = @product.name
+  li
+    strong Fats:&nbsp;
+    = @product.fats
+  li
+    strong Carbs:&nbsp;
+    = @product.carbs
+  li
+    strong Proteins:&nbsp;
+    = @product.proteins
+
+span= link "Edit", to: Routes.product_path(@conn, :edit, @product)
+span= link "Back", to: Routes.product_path(@conn, :index)

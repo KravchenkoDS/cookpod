@@ -28,7 +28,7 @@ defmodule CookpodWeb.RecipeController do
 
   def show(conn, %{"id" => id}) do
     recipe = Recipes.get_recipe!(id)
-    render(conn, "show.html", recipe: recipe)
+    render(conn, :show, recipe: recipe, total: Recipes.total_calories(recipe))    
   end
 
   def edit(conn, %{"id" => id}) do

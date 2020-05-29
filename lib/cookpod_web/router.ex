@@ -30,6 +30,9 @@ defmodule CookpodWeb.Router do
     resources "/sessions", SessionController, singleton: true
     resources "/users", UserController, only: [:create, :new]
     resources "/recipes", RecipeController
+
+    resources "/products", ProductController
+    resources "/ingredients", IngredientController    
   end
 
   scope "/", CookpodWeb do
