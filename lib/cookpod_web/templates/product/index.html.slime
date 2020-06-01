@@ -1,0 +1,23 @@
+h1 Listing Products
+
+table
+  thead
+    tr
+      th Name
+      th Fats
+      th Carbs
+      th Proteins
+      th
+  tbody
+    = for product <- @products do
+      tr
+        td= product.name
+        td= product.fats
+        td= product.carbs
+        td= product.proteins
+        td class="text-right"
+          = link "Show", to: Routes.product_path(@conn, :show, product)
+          = link "Edit", to: Routes.product_path(@conn, :edit, product)
+          = link "Delete", to: Routes.product_path(@conn, :delete, product), method: :delete, data: [confirm: "Are you sure?"]
+
+span= link "New Product", to: Routes.product_path(@conn, :new)

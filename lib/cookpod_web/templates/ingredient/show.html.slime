@@ -1,0 +1,15 @@
+h1 Show Ingredient
+
+ul
+  li
+    strong Recipe:&nbsp;
+    = @recipe.name
+  li
+    strong Product:&nbsp;
+    = @product.name
+  li
+    strong Amount:&nbsp;
+    = @ingredient.amount
+
+span= link "Edit", to: Routes.ingredient_path(@conn, :edit, @ingredient)
+span= link "Back", to: Routes.ingredient_path(@conn, :index)

@@ -8,6 +8,9 @@ ul
     strong Description:&nbsp;
     = @recipe.description
   li
+    strong Total:&nbsp;
+    = @total    
+  li
     strong Picture:&nbsp;    
 	= img_tag Cookpod.Recipes.Picture.url({@recipe.picture, @recipe})
 
