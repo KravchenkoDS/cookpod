@@ -8,12 +8,4 @@ services:
     environment:
       - "POSTGRES_PASSWORD=postgres"
     volumes:
-      - .pg_data:/var/lib/postgresql/data
-  s3:
-    image: minio/minio
-    ports:
-      - "9000:9000"
-    environment:
-      - "MINIO_ACCESS_KEY=minio"
-      - "MINIO_SECRET_KEY=minio123"
-    command: "server /data"      
+      - .pg_data:/var/lib/postgresql/data      
