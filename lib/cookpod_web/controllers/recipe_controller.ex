@@ -27,6 +27,7 @@ defmodule CookpodWeb.RecipeController do
   end
 
   def show(conn, %{"id" => id}) do
+    Recipes.incriment_recipe_views(id)
     recipe = Recipes.get_recipe!(id)
     render(conn, :show, recipe: recipe, total: Recipes.total_calories(recipe))    
   end
@@ -59,4 +60,8 @@ defmodule CookpodWeb.RecipeController do
     |> put_flash(:info, "Recipe deleted successfully.")
     |> redirect(to: Routes.recipe_path(conn, :index))
   end
+
+  def view_stats(conn, _params) do
+    render(conn, :view_stats_recipes, stats: Recipes.view_stats_recipes())
+  end  
 end
