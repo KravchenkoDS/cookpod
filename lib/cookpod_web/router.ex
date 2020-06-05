@@ -29,6 +29,9 @@ defmodule CookpodWeb.Router do
 
     resources "/sessions", SessionController, singleton: true
     resources "/users", UserController, only: [:create, :new]
+
+    get "/recipes/view_stats_recipes", RecipeController, :view_stats
+
     resources "/recipes", RecipeController
 
     resources "/products", ProductController

@@ -1,0 +1,12 @@
+h2 View stats
+.card
+  table
+  	tr
+  		th Id
+  		th Name
+  		th Shown
+    = Enum.map @stats, fn item ->
+    	tr
+    		td = Map.get(item, :id)
+    		td = get_recipe_name(Map.get(item, :id))
+    		td = Map.get(item, :views)

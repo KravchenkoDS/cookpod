@@ -5,11 +5,16 @@ defmodule Cookpod.Recipes do
   alias Cookpod.Recipes.Ingredient
   alias Cookpod.Recipes.Recipe
   alias Cookpod.Repo
+  alias Cookpod.Recipes.ViewCounter
 
   import Ecto.Query, warn: false
   alias Cookpod.Repo
 
   alias Cookpod.Recipes.Recipe
+
+  def incriment_recipe_views(id), do: ViewCounter.inc(id)
+
+  def view_stats_recipes(), do: ViewCounter.stats()  
 
   def list_recipes do
     Repo.all(Recipe)
@@ -20,12 +25,6 @@ defmodule Cookpod.Recipes do
   end  
 
   def list_all, do: Recipe |> Repo.all()
-
-  def list_recipes do
-    Recipe
-    |> where(state: "published")
-    |> Repo.all()
-  end
 
   def get_recipe!(id), do: Repo.get!(Recipe, id)
 
