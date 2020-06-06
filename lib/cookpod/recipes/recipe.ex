@@ -21,4 +21,9 @@ defmodule Cookpod.Recipes.Recipe do
     |> validate_required([:name, :description])
     |> unique_constraint(:name)
   end
+
+  def new() do
+    %__MODULE__{
+    }
+  end  
 end
