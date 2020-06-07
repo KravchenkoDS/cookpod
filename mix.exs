@@ -61,7 +61,9 @@ defmodule Cookpod.MixProject do
       {:phoenix_swagger, "~> 0.8"},
       {:ex_json_schema, "~> 0.5"},
       {:ex_machina, "~> 2.4", only: :test},
-      {:phoenix_integration, "~> 0.8", only: :test}      
+      {:phoenix_integration, "~> 0.8", only: :test},
+      {:broadway_kafka, "~> 0.1.0"},
+      {:httpoison, "~> 1.6"}            
     ]
   end
 
