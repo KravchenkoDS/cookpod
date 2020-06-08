@@ -7,7 +7,8 @@ config :cookpod, Cookpod.Repo,
   database: "cookpod_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
-  pool_size: 10
+  pool_size: 10,
+  telemetry_prefix: [:cookpod, :repo]
 
 # For development, we disable any cache and enable
 # debugging and code reloading.

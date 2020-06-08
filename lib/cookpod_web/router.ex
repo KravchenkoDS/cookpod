@@ -2,8 +2,7 @@ defmodule CookpodWeb.Router do
   use CookpodWeb, :router
   use Plug.ErrorHandler
   import Plug.BasicAuth
-
-
+  import Phoenix.LiveDashboard.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -42,6 +41,7 @@ defmodule CookpodWeb.Router do
     pipe_through [:browser, :protected]
 
     get "/terms", PageController, :terms
+    live_dashboard("/dashboard", metrics: Cookpod.Telemetry)
   end  
 
   scope "/api", CookpodWeb.Api, as: :api do
