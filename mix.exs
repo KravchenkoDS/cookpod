@@ -63,7 +63,10 @@ defmodule Cookpod.MixProject do
       {:ex_machina, "~> 2.4", only: :test},
       {:phoenix_integration, "~> 0.8", only: :test},
       {:broadway_kafka, "~> 0.1.0"},
-      {:httpoison, "~> 1.6"}            
+      {:httpoison, "~> 1.6"},
+      {:phoenix_live_dashboard, "~> 0.1"},
+      {:telemetry_metrics, "~> 0.4"},
+      {:telemetry_poller, "~> 0.4"}
     ]
   end
 
